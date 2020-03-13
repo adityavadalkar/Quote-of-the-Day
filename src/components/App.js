@@ -3,6 +3,13 @@ import logo from '../logo.png';
 import './App.css';
 
 class App extends Component {
+captureFile = (event) => {
+  event.preventDefault();
+  console.log("The file is captured.");
+  //Process file for IPFS
+  console.logevent.target.files[0]
+}
+
   render() {
     return (
       <div>
@@ -13,7 +20,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dapp University
+            Quote of the Day
           </a>
         </nav>
         <div className="container-fluid mt-5">
@@ -27,18 +34,12 @@ class App extends Component {
                 >
                   <img src={logo} className="App-logo" alt="logo" />
                 </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
+                <p>&nbsp;</p>
+                <h2>Change Meme</h2>
+                <form >
+                  <input type='file' onChange={this.captureFile} />
+                  <input type='submit'/>
+                </form>
               </div>
             </main>
           </div>
